@@ -115,6 +115,8 @@ public class BookingService {
 
         bookingRepository.save(booking);
         logger.info("Booking {} status updated to {}", bookingId, newStatus);
+        logger.info("Email sent to {}: {}", booking.getUser().getEmail(), emailSent ? "Success" : "Failure");
+
         return emailSent;
     }
 }
